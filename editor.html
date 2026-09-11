@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>MN Beauty — Editor completo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Italiana&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/editor.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="editor-sidebar">
+        <header class="editor-header">
+          <div class="editor-brand">
+            <span>MN</span>
+            <div>
+              <strong>Studio Editor</strong><small>Construtor completo</small>
+            </div>
+          </div>
+          <button id="closeSidebar" class="icon mobile-close">×</button>
+        </header>
+        <div class="editor-status">
+          <i></i>
+          <div>
+            <strong id="saveStatus">Alterações salvas</strong
+            ><small id="saveTime">Neste navegador</small>
+          </div>
+        </div>
+        <nav class="editor-nav" id="editorNav"></nav>
+        <form id="editorForm"></form>
+        <footer class="sidebar-footer">
+          <button id="openSite" class="secondary" type="button">
+            Abrir site ↗</button
+          ><button id="saveButton" class="primary" type="button">Salvar</button>
+        </footer>
+      </aside>
+      <main class="preview-workspace">
+        <header class="preview-toolbar">
+          <div>
+            <button id="openSidebar" class="icon mobile-open">☰</button
+            ><span
+              ><strong>Prévia em tempo real</strong
+              ><small>Edite e acompanhe ao lado</small></span
+            >
+          </div>
+          <div class="devices">
+            <button data-device="desktop" class="active">Desktop</button
+            ><button data-device="tablet">Tablet</button
+            ><button data-device="mobile">Celular</button>
+          </div>
+          <button id="refreshPreview" class="secondary">Atualizar</button>
+        </header>
+        <div class="preview-stage">
+          <div id="browserFrame" class="browser-frame desktop">
+            <div class="browser-bar"><i></i><span>mnbeauty.com.br</span></div>
+            <iframe
+              id="sitePreview"
+              src="index.html?preview=1"
+              title="Prévia"
+            ></iframe>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="toast" class="toast"></div>
+    <input id="jsonImport" type="file" accept="application/json" hidden />
+    <script src="js/config.js"></script>
+    <script src="js/editor.js"></script>
+  </body>
+</html>
